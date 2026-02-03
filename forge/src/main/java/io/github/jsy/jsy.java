@@ -20,16 +20,16 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(Constants.MOD_ID)
-public class jrstyle {
+public class jsy {
 
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "jrstyle";
+    public static final String MOD_ID = "jsy";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     // Creates a creative tab with the id "examplemod:example_tab" for the item item, that is placed after the combat tab
 
-    public jrstyle(FMLJavaModLoadingContext context)
+    public jsy(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
 

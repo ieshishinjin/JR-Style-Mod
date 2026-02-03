@@ -15,11 +15,11 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "io.github.jrstyle.jrstyle"
+            "io.github.jsy.jsy"
         ]
     },
     "mixins": [
-        "jrstyle.mixins.json",
+      "jsy.mixins.json",
       "jsy.fabric.mixins.json"
     ],
     "depends": {

@@ -11,14 +11,14 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModCreativeModTabForge {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "jrstyle");
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "jsy");
 
     public static final RegistryObject<CreativeModeTab> FIRST_MOD_TAB =
             CREATIVE_MODE_TABS.register("firstmod_tab",
                     () -> CreativeModeTab.builder()
                             .icon(() -> {
                                 // 使用queen作为图标
-                                ItemStack icon = ItemResolver.getItemById("jrstyle:queen")
+                                ItemStack icon = ItemResolver.getItemById("jsy:queen")
                                         .map(ItemStack::new)
                                         .orElseGet(() -> new ItemStack(ItemResolver.getDefaultIcon()));
                                 return icon;

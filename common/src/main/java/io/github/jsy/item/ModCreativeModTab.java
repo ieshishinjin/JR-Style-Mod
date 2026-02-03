@@ -12,7 +12,7 @@ public class ModCreativeModTab {
     public static final ResourceKey<CreativeModeTab> FIRST_MOD_TAB =
             ResourceKey.create(
                     Registries.CREATIVE_MODE_TAB,
-                    new ResourceLocation("jrstyle", "firstmod_tab")
+                    new ResourceLocation("jsy", "firstmod_tab")
             );
 
     // 标签页标题翻译键

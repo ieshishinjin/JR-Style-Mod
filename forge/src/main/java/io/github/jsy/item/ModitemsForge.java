@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class ModitemsForge {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, "jrstyle");
+            DeferredRegister.create(ForgeRegistries.ITEMS, "jsy");
 
     // 存储注册的物品
     public static final Map<String, RegistryObject<Item>> REGISTERED_ITEMS = new HashMap<>();

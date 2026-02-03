@@ -72,4 +72,4 @@ rootProject.name = 'JR Style'
 include("common")
 include("fabric")
 include("forge")
-include("neoforge")
+//include("neoforge")

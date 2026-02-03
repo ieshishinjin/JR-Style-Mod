@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import io.github.jsy.items.ModitemsFabric;
 import io.github.jsy.items.ModCreativeModTabFabric;
 
-public class jrstyle implements ModInitializer {
+public class jsy implements ModInitializer {
     
     @Override
     public void onInitialize() {
