@@ -25,3 +25,9 @@ mandatory = true
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies.${mod_id}]]
+modId="mtr"
+mandatory=true
+versionRange="[4.0.3,)"  # 最低版本要求
+ordering="AFTER"  # 确保在 MTR 之后加载
+side="BOTH"
