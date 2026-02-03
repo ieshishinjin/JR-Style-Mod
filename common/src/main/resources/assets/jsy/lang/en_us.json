@@ -1,0 +1,9 @@
+{
+  "item.jsy.queen": "Queen",
+  "item.jsy.king": "King",
+  "item.jsy.prince": "Prince",
+
+  "block.jsy.kingdom" : "Kingdom",
+
+  "itemGroup.first_tab": "JR Style Items"
+}

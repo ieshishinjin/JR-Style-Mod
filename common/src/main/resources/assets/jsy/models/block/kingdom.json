@@ -2,8 +2,8 @@
 	"format_version": "1.20.4",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "jrstyle:block/kingdom",
-		"particle": "jrstyle:block/kingdom"
+		"0": "jsy:block/kingdom",
+		"particle": "jsy:block/kingdom"
 	},
 	"elements": [
 		{

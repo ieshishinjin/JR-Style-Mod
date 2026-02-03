@@ -39,7 +39,7 @@ public class ModitemsFabric {
         for (Map.Entry<String, Item> entry : REGISTERED_ITEMS.entrySet()) {
             Registry.register(
                     BuiltInRegistries.ITEM,
-                    new ResourceLocation("jrstyle", entry.getKey()),
+                    new ResourceLocation("jsy", entry.getKey()),
                     entry.getValue()
             );
         }

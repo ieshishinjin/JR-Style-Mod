@@ -1,7 +1,7 @@
 {
   "variants" : {
     "": {
-      "model": "jrstyle:block/kingdom"
+      "model": "jsy:block/kingdom"
     }
   }
 }

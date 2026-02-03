@@ -7,9 +7,11 @@
     "authors": [
         "${mod_author}"
     ],
+    "iconFile": "assets/jsy/icon.png",
     "contact": {
-        "homepage": "https://fabricmc.net/",
-        "sources": "https://github.com/FabricMC/fabric-example-mod"
+        "homepage": "https://github.com/ieshishinjin",
+        "sources": "https://github.com/ieshishinjin/JR-Style-Mod",
+        "issues": "https://github.com/ieshishinjin/JR-Style-Mod/issues"
     },
     "license": "${license}",
     "environment": "*",

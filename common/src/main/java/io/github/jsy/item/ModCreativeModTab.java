@@ -23,9 +23,9 @@ public class ModCreativeModTab {
 
     // 标签页包含的物品ID列表（按顺序）
     public static final String[] TAB_ITEMS = {
-            "jrstyle:king",
-            "jrstyle:queen",
-            "jrstyle:prince",
+            "jsy:king",
+            "jsy:queen",
+            "jsy:prince",
             "minecraft:apple",
             "minecraft:diamond"
     };

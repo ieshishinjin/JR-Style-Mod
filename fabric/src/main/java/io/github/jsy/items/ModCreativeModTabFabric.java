@@ -28,7 +28,7 @@ public class ModCreativeModTabFabric {
         }
 
         // 创建图标
-        ItemStack icon = ItemResolver.getItemById("jrstyle:queen")
+        ItemStack icon = ItemResolver.getItemById("jsy:queen")
                 .map(ItemStack::new)
                 .orElseGet(() -> new ItemStack(ItemResolver.getDefaultIcon()));
 
@@ -47,7 +47,7 @@ public class ModCreativeModTabFabric {
     public static void register() {
         Registry.register(
                 BuiltInRegistries.CREATIVE_MODE_TAB,
-                new ResourceLocation("jrstyle", "firstmod_tab"),
+                new ResourceLocation("jsy", "firstmod_tab"),
                 FIRST_MOD_TAB
         );
     }
