@@ -4,7 +4,7 @@ _JR Style Mod_ is a [Minecraft mod](https://minecraft.wiki/w/Mods) that allows y
 
 ## Major Features in 4.0.0
 
-
+1
 
 ## Downloads and Installation
 
