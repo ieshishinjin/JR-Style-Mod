@@ -1,43 +1,35 @@
-// forge/src/main/java/io/github/jrstyle/forge/ModCreativeModeTabForge.java
 package io.github.jsy.item;
 
-import io.github.jsy.util.ItemResolver;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModCreativeModTabForge {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "jsy");
+import static io.github.jsy.item.ModitemsForge.*;
 
-    public static final RegistryObject<CreativeModeTab> FIRST_MOD_TAB =
-            CREATIVE_MODE_TABS.register("firstmod_tab",
-                    () -> CreativeModeTab.builder()
-                            .icon(() -> {
-                                // 使用queen作为图标
-                                ItemStack icon = ItemResolver.getItemById("jsy:queen")
-                                        .map(ItemStack::new)
-                                        .orElseGet(() -> new ItemStack(ItemResolver.getDefaultIcon()));
-                                return icon;
-                            })
-                            .title(ModCreativeModTab.getTitle())
+public class ModCreativeModTabForge {
+    //  创建物品栏注册器
+    private static final DeferredRegister<CreativeModeTab> TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "jsy");
+    // 4. 注册物品栏
+    public static final RegistryObject<CreativeModeTab> JR_STYLE_TAB =
+            TABS.register("main", () ->
+                    CreativeModeTab.builder()
+                            .title(Component.translatable("itemGroup.jsy.main"))
+                            .icon(() -> King.get().getDefaultInstance())
                             .displayItems((params, output) -> {
-                                // 添加所有物品
-                                for (String itemId : ModCreativeModTab.TAB_ITEMS) {
-                                    ItemResolver.getItemById(itemId)
-                                            .ifPresent(item -> output.accept(new ItemStack(item)));
-                                }
+                                output.accept(King.get());
+                                output.accept(Prince.get());
+                                output.accept(Queen.get());
+                                // 可继续添加其他物品
                             })
                             .build()
             );
 
+    // 5. 将注册器连接到事件总线
     public static void register(IEventBus eventBus) {
-        // 初始化common模块
-        ModCreativeModTab.init();
-        // 注册标签页
-        CREATIVE_MODE_TABS.register(eventBus);
+        TABS.register(eventBus);
     }
 }

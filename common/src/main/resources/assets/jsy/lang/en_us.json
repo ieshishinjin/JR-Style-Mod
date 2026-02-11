@@ -5,5 +5,8 @@
 
   "block.jsy.kingdom" : "Kingdom",
 
-  "itemGroup.first_tab": "JR Style Items"
+  "itemGroup.jsy.main": "JR Style Items",
+
+  "modmenu.nameTranslation.jsy": "JR Style Mod",
+  "modmenu.descriptionTranslation.jsy": "A Mod for Japan Railway"
 }

@@ -5,5 +5,8 @@
 
   "block.jsy.kingdom" : "王国",
 
-  "itemGroup.first_tab": "日本铁路风格模组"
+  "itemGroup.jsy.main": "日本铁路风格模组",
+
+  "modmenu.nameTranslation.jsy": "JR铁路扩展",
+  "modmenu.descriptionTranslation.jsy": "日本铁路的模组"
 }

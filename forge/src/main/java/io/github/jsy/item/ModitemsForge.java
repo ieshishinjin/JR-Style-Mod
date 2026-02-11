@@ -1,50 +1,33 @@
-// forge/src/main/java/io/github/jrstyle/forge/ModItemsForge.java
+// ModItems.java - 存放于 forge/
 package io.github.jsy.item;
 
+import io.github.jsy.item.Moditems; // 导入libs中的核心物品类
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.HashMap;
-import java.util.Map;
+import static io.github.jsy.Constants.MOD_ID;
 
 public class ModitemsForge {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, "jsy");
+    // 创建延迟注册器
+    private static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID); // 你的模组ID
 
-    // 存储注册的物品
-    public static final Map<String, RegistryObject<Item>> REGISTERED_ITEMS = new HashMap<>();
+    // 注册物品，并持有其引用
+    public static final RegistryObject<Item> Queen = ITEMS.register("queen",
+            Moditems::new // 使用构造函数引用
+    );
+    public static final RegistryObject<Item> King = ITEMS.register("king",
+            Moditems::new // 使用构造函数引用
+    );
+    public static final RegistryObject<Item> Prince = ITEMS.register("prince",
+            Moditems::new // 使用构造函数引用
+    );
 
-    static {
-        // 使用common模块中定义的ID进行注册
-        for (String itemId : Moditems.getAllItemIds()) {
-            RegistryObject<Item> item = ITEMS.register(
-                    itemId,
-                    () -> new Item(Moditems.getPropertiesForId(itemId))
-            );
-            REGISTERED_ITEMS.put(itemId, item);
-        }
-    }
-
-    // 获取物品实例的方法
-    public static Item getQueen() {
-        return REGISTERED_ITEMS.get(Moditems.QUEEN_ID).get();
-    }
-
-    public static Item getKing() {
-        return REGISTERED_ITEMS.get(Moditems.KING_ID).get();
-    }
-
-    public static Item getPrince() {
-        return REGISTERED_ITEMS.get(Moditems.PRINCE_ID).get();
-    }
-
+    // 将注册器添加到模组事件总线
     public static void register(IEventBus eventBus) {
-        // 初始化common模块
-        Moditems.init();
-        // 注册物品
         ITEMS.register(eventBus);
     }
 }

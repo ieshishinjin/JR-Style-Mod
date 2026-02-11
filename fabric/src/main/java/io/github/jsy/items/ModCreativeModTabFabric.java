@@ -1,54 +1,30 @@
-// fabric/src/main/java/io/github/jrstyle/fabric/ModCreativeModeTabFabric.java
 package io.github.jsy.items;
 
-import io.github.jsy.item.ModCreativeModTab;
-import io.github.jsy.util.ItemResolver;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 
-import java.util.ArrayList;
-import java.util.List;
+import static io.github.jsy.items.ModitemsFabric.*;
 
 public class ModCreativeModTabFabric {
-    public static final CreativeModeTab FIRST_MOD_TAB;
-
-    static {
-        // 初始化common模块
-        ModCreativeModTab.init();
-
-        // 收集所有物品
-        List<ItemStack> items = new ArrayList<>();
-        for (String itemId : ModCreativeModTab.TAB_ITEMS) {
-            ItemResolver.getItemById(itemId)
-                    .ifPresent(item -> items.add(new ItemStack(item)));
-        }
-
-        // 创建图标
-        ItemStack icon = ItemResolver.getItemById("jsy:queen")
-                .map(ItemStack::new)
-                .orElseGet(() -> new ItemStack(ItemResolver.getDefaultIcon()));
-
-        // 注册Fabric物品组
-        FIRST_MOD_TAB = FabricItemGroup.builder()
-                .icon(() -> icon)
-                .title(ModCreativeModTab.getTitle())
-                .displayItems((params, output) -> {
-                    for (ItemStack stack : items) {
-                        output.accept(stack);
-                    }
-                })
-                .build();
-    }
-
+    public static final CreativeModeTab JR_STYLE_TAB =
+            FabricItemGroup.builder()
+                    .title(Component.translatable("itemGroup.jsy.main"))
+                    .icon(() -> King.getDefaultInstance())
+                    .displayItems((params, output) -> {
+                        output.accept(King.getDefaultInstance());
+                        output.accept(Queen.getDefaultInstance());
+                        output.accept(Prince.getDefaultInstance());
+                    })
+                    .build();
     public static void register() {
-        Registry.register(
-                BuiltInRegistries.CREATIVE_MODE_TAB,
-                new ResourceLocation("jsy", "firstmod_tab"),
-                FIRST_MOD_TAB
+        // 注册物品栏
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
+                new ResourceLocation("jsy", "main"),
+                JR_STYLE_TAB
         );
     }
 }
