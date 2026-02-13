@@ -33,6 +33,14 @@
     },
     "suggests": {
         "another-mod": "*"
+    },
+    "custom": {
+      "modmenu": {
+        "links": {
+          "modmenu.github_releases": "https://github.com/ieshishinjin/JR-Style-Mod/releases",
+          "modmenu.modrinth" : "111"
+        }
+      }
     }
 }
   

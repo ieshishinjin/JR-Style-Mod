@@ -1,6 +1,7 @@
 package io.github.jsy;
 
 import com.mojang.logging.LogUtils;
+import io.github.jsy.block.ModblockForge;
 import io.github.jsy.item.ModCreativeModTabForge;
 import io.github.jsy.item.ModitemsForge;
 import net.minecraft.client.Minecraft;
@@ -49,6 +50,7 @@ public class jsy {
 
         ModitemsForge.register(modEventBus);
         ModCreativeModTabForge.register(modEventBus);
+        ModblockForge.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

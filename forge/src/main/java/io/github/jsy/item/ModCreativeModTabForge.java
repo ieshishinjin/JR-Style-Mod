@@ -8,6 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 import static io.github.jsy.item.ModitemsForge.*;
+import static io.github.jsy.block.ModblockForge.*;
 
 public class ModCreativeModTabForge {
     //  创建物品栏注册器
@@ -23,6 +24,7 @@ public class ModCreativeModTabForge {
                                 output.accept(King.get());
                                 output.accept(Prince.get());
                                 output.accept(Queen.get());
+                                output.accept(Kingdom.get());
                                 // 可继续添加其他物品
                             })
                             .build()
