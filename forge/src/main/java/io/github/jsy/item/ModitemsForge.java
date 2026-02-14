@@ -1,7 +1,6 @@
-// ModItems.java - 存放于 forge/
 package io.github.jsy.item;
 
-import io.github.jsy.item.Moditems; // 导入libs中的核心物品类
+import io.github.jsy.item.Moditems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,10 +20,10 @@ public class ModitemsForge {
             Moditems::new // 使用构造函数引用
     );
     public static final RegistryObject<Item> King = ITEMS.register("king",
-            Moditems::new // 使用构造函数引用
+            Moditems::new
     );
     public static final RegistryObject<Item> Prince = ITEMS.register("prince",
-            Moditems::new // 使用构造函数引用
+            Moditems::new
     );
 
     // 将注册器添加到模组事件总线

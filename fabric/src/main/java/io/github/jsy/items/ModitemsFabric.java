@@ -13,7 +13,7 @@ public class ModitemsFabric {
     public static final Moditems Prince = new Moditems();
 
     public static void register() {
-        // 1. 将物品注册到游戏注册表中
+        // 将物品注册到游戏注册表中
         Registry.register(BuiltInRegistries.ITEM,
                 new ResourceLocation("jsy", "queen"), // 物品ID: bmltransit:blue_moon
                 Queen
