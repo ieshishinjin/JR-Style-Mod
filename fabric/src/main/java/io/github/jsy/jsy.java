@@ -1,10 +1,6 @@
 package io.github.jsy;
 
-import io.github.jsy.block.Modblock;
-import io.github.jsy.block.ModblockFabric;
 import net.fabricmc.api.ModInitializer;
-import io.github.jsy.items.ModitemsFabric;
-import io.github.jsy.items.ModCreativeModTabFabric;
 
 public class jsy implements ModInitializer {
     
@@ -16,9 +12,6 @@ public class jsy implements ModInitializer {
         // project.
         // Use Fabric to bootstrap the Common mod.
         Constants.LOG.info("Hello Fabric world!");
-        ModitemsFabric.register();
-        ModCreativeModTabFabric.register();
-        ModblockFabric.register();
         CommonClass.init();
     }
 }

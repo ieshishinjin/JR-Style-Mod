@@ -1,9 +1,6 @@
 package io.github.jsy;
 
 import com.mojang.logging.LogUtils;
-import io.github.jsy.block.ModblockForge;
-import io.github.jsy.item.ModCreativeModTabForge;
-import io.github.jsy.item.ModitemsForge;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -48,9 +45,6 @@ public class jsy {
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        ModitemsForge.register(modEventBus);
-        ModCreativeModTabForge.register(modEventBus);
-        ModblockForge.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
