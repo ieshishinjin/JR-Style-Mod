@@ -1,7 +1,7 @@
 {
-
   "itemGroup.jsy.main": "JR Style Items",
-
   "modmenu.nameTranslation.jsy": "JR Style Mod",
-  "modmenu.descriptionTranslation.jsy": "A Mod for Japan Railway"
+  "modmenu.descriptionTranslation.jsy": "A Mod for Japan Railway",
+
+  "block.jsy.line_color_block": "Line Color Block"
 }

@@ -1,7 +1,7 @@
 {
-
   "itemGroup.jsy.main": "日本铁路风格模组",
-
   "modmenu.nameTranslation.jsy": "JR铁路扩展",
-  "modmenu.descriptionTranslation.jsy": "日本铁路的模组"
+  "modmenu.descriptionTranslation.jsy": "日本铁路的模组",
+
+  "block.jsy.line_color_block": "线路颜色方块"
 }

@@ -18,6 +18,9 @@
     "entrypoints": {
         "main": [
             "io.github.jsy.jsy"
+        ],
+        "client": [
+            "io.github.jsy.client.FabricClientMod"
         ]
     },
     "mixins": [
