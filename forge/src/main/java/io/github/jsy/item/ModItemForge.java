@@ -15,3 +15,5 @@ public class ModItemForge {
     public static final RegistryObject<Item> MAGIC_SWORD =
             ITEMS.register("magic_sword", MagicSwordItem::new);
 }
+
+//2026.3.7
