@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "jsy:line_color_block",
+    "jsy:jr_station_sign_hanging",
+    "jsy:jr_station_sign_pole"
+  ]
+}

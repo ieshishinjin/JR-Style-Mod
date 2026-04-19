@@ -3,5 +3,21 @@
   "modmenu.nameTranslation.jsy": "JR铁路扩展",
   "modmenu.descriptionTranslation.jsy": "日本铁路的模组",
 
-  "block.jsy.line_color_block": "线路颜色方块"
+  "block.jsy.line_color_block": "线路颜色方块",
+  "block.jsy.jr_station_sign_hanging": "JR站名牌（悬挂式）",
+  "block.jsy.jr_station_sign_pole": "JR站名牌（立柱式）",
+
+  "screen.jsy.jr_station_sign.title": "JR 站名牌设置",
+  "screen.jsy.jr_station_sign.station_name": "站名",
+  "screen.jsy.jr_station_sign.line_name": "线路名",
+  "screen.jsy.jr_station_sign.station_number": "车站编号",
+  "screen.jsy.jr_station_sign.line_color": "线路颜色（Hex）",
+  "screen.jsy.jr_station_sign.color_preset": "线路配色",
+  "screen.jsy.jr_station_sign.variant": "样式",
+  "screen.jsy.jr_station_sign.variant.hanging": "悬挂式",
+  "screen.jsy.jr_station_sign.variant.pole": "立柱式",
+  "screen.jsy.jr_station_sign.preset.yamanote": "山手线",
+  "screen.jsy.jr_station_sign.preset.chuo": "中央线",
+  "screen.jsy.jr_station_sign.preset.keihin_tohoku": "京滨东北线",
+  "screen.jsy.jr_station_sign.preset.saikyo": "埼京线"
 }

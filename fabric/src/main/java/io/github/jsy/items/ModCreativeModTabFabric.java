@@ -19,6 +19,8 @@ public class ModCreativeModTabFabric {
                     .displayItems((params, output) -> {
                         // 添加线路颜色方块到创造模式标签页
                         output.accept(FabricModBlocks.LINE_COLOR_BLOCK.asItem());
+                        output.accept(FabricModBlocks.JR_STATION_SIGN_HANGING.asItem());
+                        output.accept(FabricModBlocks.JR_STATION_SIGN_POLE.asItem());
                     })
                     .build();
 

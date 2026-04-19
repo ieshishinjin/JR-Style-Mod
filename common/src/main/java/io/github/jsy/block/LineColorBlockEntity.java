@@ -25,8 +25,8 @@ public class LineColorBlockEntity extends BlockEntity {
     private boolean needsDetection = true;
 
     public LineColorBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.LINE_COLOR_BLOCK_ENTITY.get(), pos, state);
-    }
+        super(ModBlockEntities.LINE_COLOR_BLOCK_ENTITY, pos, state);
+        }
 
     public LineColorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);

@@ -1,6 +1,7 @@
 package io.github.jsy;
 
 import io.github.jsy.items.ModCreativeModTabFabric;
+import io.github.jsy.network.JRStationSignNetworking;
 import io.github.jsy.registry.FabricModBlockEntities;
 import io.github.jsy.registry.FabricModBlocks;
 import net.fabricmc.api.ModInitializer;
@@ -21,6 +22,9 @@ public class jsy implements ModInitializer {
 
         // 注册方块实体
         FabricModBlockEntities.register();
+
+        // 注册网络包
+        JRStationSignNetworking.registerServer();
 
         // 注册创造模式标签页
         ModCreativeModTabFabric.register();

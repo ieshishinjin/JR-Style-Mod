@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,variant=hanging": { "model": "jsy:block/jr_station_sign_hanging" },
+    "facing=east,variant=hanging": { "model": "jsy:block/jr_station_sign_hanging", "y": 90 },
+    "facing=south,variant=hanging": { "model": "jsy:block/jr_station_sign_hanging", "y": 180 },
+    "facing=west,variant=hanging": { "model": "jsy:block/jr_station_sign_hanging", "y": 270 },
+    "facing=north,variant=pole": { "model": "jsy:block/jr_station_sign_pole" },
+    "facing=east,variant=pole": { "model": "jsy:block/jr_station_sign_pole", "y": 90 },
+    "facing=south,variant=pole": { "model": "jsy:block/jr_station_sign_pole", "y": 180 },
+    "facing=west,variant=pole": { "model": "jsy:block/jr_station_sign_pole", "y": 270 }
+  }
+}

@@ -3,5 +3,21 @@
   "modmenu.nameTranslation.jsy": "JR Style Mod",
   "modmenu.descriptionTranslation.jsy": "A Mod for Japan Railway",
 
-  "block.jsy.line_color_block": "Line Color Block"
+  "block.jsy.line_color_block": "Line Color Block",
+  "block.jsy.jr_station_sign_hanging": "JR Station Sign (Hanging)",
+  "block.jsy.jr_station_sign_pole": "JR Station Sign (Pole)",
+
+  "screen.jsy.jr_station_sign.title": "JR Station Sign",
+  "screen.jsy.jr_station_sign.station_name": "Station Name",
+  "screen.jsy.jr_station_sign.line_name": "Line Name",
+  "screen.jsy.jr_station_sign.station_number": "Station Number",
+  "screen.jsy.jr_station_sign.line_color": "Line Color (Hex)",
+  "screen.jsy.jr_station_sign.color_preset": "Line Preset",
+  "screen.jsy.jr_station_sign.variant": "Variant",
+  "screen.jsy.jr_station_sign.variant.hanging": "Hanging",
+  "screen.jsy.jr_station_sign.variant.pole": "Pole",
+  "screen.jsy.jr_station_sign.preset.yamanote": "Yamanote Line",
+  "screen.jsy.jr_station_sign.preset.chuo": "Chuo Line",
+  "screen.jsy.jr_station_sign.preset.keihin_tohoku": "Keihin-Tohoku Line",
+  "screen.jsy.jr_station_sign.preset.saikyo": "Saikyo Line"
 }

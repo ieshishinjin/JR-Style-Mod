@@ -2,6 +2,7 @@ package io.github.jsy.client;
 
 import io.github.jsy.Constants;
 import io.github.jsy.client.render.LineColorBlockEntityRenderer;
+import io.github.jsy.network.JRStationSignNetworking;
 import io.github.jsy.registry.FabricModBlockEntities;
 import io.github.jsy.registry.FabricModBlocks;
 import net.fabricmc.api.ClientModInitializer;
@@ -22,6 +23,8 @@ public class FabricClientMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         Constants.LOG.info("Initializing JR Style Mod client for Fabric");
+
+        JRStationSignNetworking.registerClient();
 
         // 注册方块实体渲染器
         BlockEntityRendererRegistry.register(

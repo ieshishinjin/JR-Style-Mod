@@ -1,0 +1,35 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "front": "minecraft:block/white_concrete",
+    "back": "minecraft:block/light_gray_concrete",
+    "accent": "minecraft:block/black_concrete",
+    "pole": "minecraft:block/smooth_stone"
+  },
+  "elements": [
+    {
+      "from": [2, 7, 11],
+      "to": [14, 14, 15],
+      "faces": {
+        "north": { "texture": "#back" },
+        "south": { "texture": "#front" },
+        "east": { "texture": "#accent" },
+        "west": { "texture": "#accent" },
+        "up": { "texture": "#accent" },
+        "down": { "texture": "#accent" }
+      }
+    },
+    {
+      "from": [7, 0, 12],
+      "to": [9, 7, 14],
+      "faces": {
+        "north": { "texture": "#pole" },
+        "south": { "texture": "#pole" },
+        "east": { "texture": "#pole" },
+        "west": { "texture": "#pole" },
+        "up": { "texture": "#pole" },
+        "down": { "texture": "#pole" }
+      }
+    }
+  ]
+}

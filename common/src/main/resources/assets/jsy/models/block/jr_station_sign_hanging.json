@@ -1,0 +1,46 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "front": "minecraft:block/white_concrete",
+    "back": "minecraft:block/light_gray_concrete",
+    "accent": "minecraft:block/black_concrete"
+  },
+  "elements": [
+    {
+      "from": [1, 4, 14],
+      "to": [15, 12, 16],
+      "faces": {
+        "north": { "texture": "#back" },
+        "south": { "texture": "#front" },
+        "east": { "texture": "#accent" },
+        "west": { "texture": "#accent" },
+        "up": { "texture": "#accent" },
+        "down": { "texture": "#accent" }
+      }
+    },
+    {
+      "from": [3, 12, 14],
+      "to": [5, 16, 16],
+      "faces": {
+        "north": { "texture": "#accent" },
+        "south": { "texture": "#accent" },
+        "east": { "texture": "#accent" },
+        "west": { "texture": "#accent" },
+        "up": { "texture": "#accent" },
+        "down": { "texture": "#accent" }
+      }
+    },
+    {
+      "from": [11, 12, 14],
+      "to": [13, 16, 16],
+      "faces": {
+        "north": { "texture": "#accent" },
+        "south": { "texture": "#accent" },
+        "east": { "texture": "#accent" },
+        "west": { "texture": "#accent" },
+        "up": { "texture": "#accent" },
+        "down": { "texture": "#accent" }
+      }
+    }
+  ]
+}

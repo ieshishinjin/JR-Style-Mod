@@ -1,6 +1,7 @@
 package io.github.jsy.platform;
 
 import io.github.jsy.Constants;
+import io.github.jsy.platform.services.IGuiHelper;
 import io.github.jsy.platform.services.IMTRHelper;
 import io.github.jsy.platform.services.IPlatformHelper;
 
@@ -18,6 +19,7 @@ public class Services {
 
     // MTR 辅助服务，用于获取 MTR 线路信息
     public static final IMTRHelper MTR = load(IMTRHelper.class);
+    public static final IGuiHelper GUI_HELPER = load(IGuiHelper.class);
 
     // This code is used to load a service for the current environment. Your implementation of the service must be defined
     // manually by including a text file in META-INF/services named with the fully qualified class name of the service.
