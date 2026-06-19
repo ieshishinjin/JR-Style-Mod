@@ -1,6 +1,8 @@
 package io.github.jsy.block;
 
 import io.github.jsy.Constants;
+import io.github.jsy.platform.LineColorSyncHandler;
+import io.github.jsy.platform.Services;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -17,16 +19,26 @@ import org.jetbrains.annotations.Nullable;
  */
 public class LineColorBlockEntity extends BlockEntity {
 
-    // 线路颜色 (ARGB格式，默认白色)
-    private int lineColor = 0xFFFFFFFF;
+    // 线路颜色 (ARGB格式，默认蓝色方便调试)
+    private int lineColor = 0xFF2196F3;
     // 线路ID
     private String lineId = "";
     // 是否需要重新检测颜色
     private boolean needsDetection = true;
 
+    // 各平台设置的响应式颜色同步处理器
+    private static LineColorSyncHandler syncHandler;
+
+    /**
+     * 设置颜色同步处理器（由各平台初始化时调用）
+     */
+    public static void setSyncHandler(LineColorSyncHandler handler) {
+        syncHandler = handler;
+    }
+
     public LineColorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.LINE_COLOR_BLOCK_ENTITY, pos, state);
-        }
+    }
 
     public LineColorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -72,24 +84,25 @@ public class LineColorBlockEntity extends BlockEntity {
     public void detectLineColor(Level level, BlockPos pos) {
         Constants.LOG.debug("Detecting line color at {}", pos);
 
-        // 使用 MTR 服务获取线路颜色
-        Integer color = io.github.jsy.platform.Services.MTR.getLineColor(level, pos);
+        Integer color = Services.MTR.getLineColor(level, pos);
         if (color != null) {
-            setLineColor(color);
+            setLineColor(color | 0xFF000000); // 确保ARGB
             Constants.LOG.info("Detected line color {} at {}", String.format("0x%08X", color), pos);
         } else {
-            // 如果没有找到线路，使用默认颜色（白色）
-            setLineColor(0xFFFFFFFF);
-            Constants.LOG.debug("No MTR line found near {}, using default color", pos);
+            Constants.LOG.debug("No MTR line found near {}, keeping current color", pos);
         }
 
-        // 获取线路ID
-        String lineId = io.github.jsy.platform.Services.MTR.getLineId(level, pos);
-        if (lineId != null) {
-            setLineId(lineId);
+        String detectedLineId = Services.MTR.getLineId(level, pos);
+        if (detectedLineId != null) {
+            setLineId(detectedLineId);
         }
 
         setNeedsDetection(false);
+
+        // 如果在客户端检测到颜色，通过平台网络包同步到服务端
+        if (level != null && level.isClientSide && color != null && syncHandler != null) {
+            syncHandler.syncColor(pos, color, detectedLineId != null ? detectedLineId : "");
+        }
     }
 
     /**
@@ -122,12 +135,17 @@ public class LineColorBlockEntity extends BlockEntity {
         super.load(tag);
         if (tag.contains("LineColor")) {
             this.lineColor = tag.getInt("LineColor");
-        }
+        } // else keep current default (blue)
         if (tag.contains("LineId")) {
             this.lineId = tag.getString("LineId");
         }
         if (tag.contains("NeedsDetection")) {
             this.needsDetection = tag.getBoolean("NeedsDetection");
+        }
+
+        // 客户端加载时（接收数据包或加载区块），尝试检测 MTR 线路颜色
+        if (level != null && level.isClientSide && needsDetection) {
+            detectLineColor(level, worldPosition);
         }
     }
 

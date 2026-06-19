@@ -40,12 +40,12 @@ public class LineColorBlock extends BaseEntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean isMoving) {
         super.onPlace(state, level, pos, oldState, isMoving);
-        if (!level.isClientSide) {
-            // 服务端：当方块放置时，尝试检测附近的 MTR 线路
-            BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof LineColorBlockEntity lineColorBE) {
-                lineColorBE.detectLineColor(level, pos);
-            }
+        // 两侧都尝试检测：
+        // - 服务端：MTRHelper 返回 null（无 MTR API），保留默认颜色
+        // - 客户端：使用 MinecraftClientData 检测线路颜色，通过网络包同步回服务端
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof LineColorBlockEntity lineColorBE) {
+            lineColorBE.detectLineColor(level, pos);
         }
     }
 }

@@ -1,7 +1,6 @@
 package io.github.jsy.client.screen;
 
 import io.github.jsy.block.JRStationSignVariant;
-import io.github.jsy.network.JRStationSignNetworking;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.CycleButton;
@@ -11,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class JRStationSignScreen extends Screen {
 
@@ -27,6 +27,7 @@ public class JRStationSignScreen extends Screen {
     private final String initialStationNumber;
     private final int initialLineColor;
     private final JRStationSignVariant initialVariant;
+    private final Consumer<SignSaveData> onSave;
 
     private EditBox stationNameBox;
     private EditBox lineNameBox;
@@ -34,7 +35,9 @@ public class JRStationSignScreen extends Screen {
     private EditBox colorBox;
     private CycleButton<JRStationSignVariant> variantButton;
 
-    public JRStationSignScreen(BlockPos pos, String stationName, String lineName, String stationNumber, int lineColor, JRStationSignVariant variant) {
+    public JRStationSignScreen(BlockPos pos, String stationName, String lineName,
+                               String stationNumber, int lineColor, JRStationSignVariant variant,
+                               Consumer<SignSaveData> onSave) {
         super(Component.translatable("screen.jsy.jr_station_sign.title"));
         this.pos = pos;
         this.initialStationName = stationName;
@@ -42,6 +45,7 @@ public class JRStationSignScreen extends Screen {
         this.initialStationNumber = stationNumber;
         this.initialLineColor = lineColor;
         this.initialVariant = variant;
+        this.onSave = onSave;
     }
 
     @Override
@@ -100,14 +104,14 @@ public class JRStationSignScreen extends Screen {
     }
 
     private void saveAndClose() {
-        JRStationSignNetworking.sendSavePacket(
+        onSave.accept(new SignSaveData(
                 pos,
                 stationNameBox.getValue(),
                 lineNameBox.getValue(),
                 stationNumberBox.getValue(),
                 parseColor(colorBox.getValue(), initialLineColor),
                 variantButton.getValue()
-        );
+        ));
         onClose();
     }
 

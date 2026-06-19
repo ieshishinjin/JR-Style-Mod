@@ -1,7 +1,9 @@
 package io.github.jsy.client;
 
 import io.github.jsy.Constants;
-import io.github.jsy.client.render.LineColorBlockEntityRenderer;
+import io.github.jsy.block.LineColorBlockEntity;
+import io.github.jsy.block.ModBlocks;
+import io.github.jsy.client.render.*;
 import io.github.jsy.network.JRStationSignNetworking;
 import io.github.jsy.registry.FabricModBlockEntities;
 import io.github.jsy.registry.FabricModBlocks;
@@ -15,9 +17,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Fabric 客户端初始化
- */
 public class FabricClientMod implements ClientModInitializer {
 
     @Override
@@ -31,23 +30,28 @@ public class FabricClientMod implements ClientModInitializer {
                 FabricModBlockEntities.LINE_COLOR_BLOCK_ENTITY,
                 LineColorBlockEntityRenderer::new
         );
+        BlockEntityRendererRegistry.register(
+                FabricModBlockEntities.JR_STATION_SIGN_BLOCK_ENTITY,
+                StationSignBlockEntityRenderer::new
+        );
+        BlockEntityRendererRegistry.register(
+                FabricModBlockEntities.PLATFORM_SIGN_BLOCK_ENTITY,
+                PlatformSignBlockEntityRenderer::new
+        );
+        BlockEntityRendererRegistry.register(
+                FabricModBlockEntities.DIRECTION_SIGN_BLOCK_ENTITY,
+                DirectionSignBlockEntityRenderer::new
+        );
 
-        // 注册方块颜色提供器（用于 tintindex）
+        // 注册方块颜色提供器
         ColorProviderRegistry.BLOCK.register(new BlockColor() {
             @Override
             public int getColor(BlockState state, @Nullable BlockAndTintGetter level, @Nullable BlockPos pos, int tintIndex) {
-                if (level == null || pos == null) {
-                    return 0xFFFFFFFF;
-                }
-
+                if (level == null || pos == null) return 0xFFFFFFFF;
                 BlockEntity blockEntity = level.getBlockEntity(pos);
-                if (blockEntity instanceof io.github.jsy.block.LineColorBlockEntity lineColorBE) {
-                    // tintIndex 0 用于线路颜色
-                    if (tintIndex == 0) {
-                        return lineColorBE.getLineColor();
-                    }
+                if (blockEntity instanceof LineColorBlockEntity lineColorBE && tintIndex == 0) {
+                    return lineColorBE.getLineColor();
                 }
-
                 return 0xFFFFFFFF;
             }
         }, FabricModBlocks.LINE_COLOR_BLOCK);

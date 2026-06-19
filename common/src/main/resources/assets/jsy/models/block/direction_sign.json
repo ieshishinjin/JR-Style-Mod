@@ -1,8 +1,7 @@
 {
   "parent": "block/block",
   "textures": {
-    "front": "jsy:block/station_sign_front",
-    "back": "jsy:block/station_sign_back",
+    "green": "jsy:block/direction_sign_green",
     "accent": "jsy:block/station_sign_accent"
   },
   "elements": [
@@ -10,8 +9,8 @@
       "from": [1, 4, 14],
       "to": [15, 12, 16],
       "faces": {
-        "north": { "texture": "#back" },
-        "south": { "texture": "#front" },
+        "north": { "texture": "#green" },
+        "south": { "texture": "#green" },
         "east": { "texture": "#accent" },
         "west": { "texture": "#accent" },
         "up": { "texture": "#accent" },

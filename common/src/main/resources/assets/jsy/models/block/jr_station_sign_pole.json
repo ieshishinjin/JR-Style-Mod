@@ -1,10 +1,10 @@
 {
   "parent": "block/block",
   "textures": {
-    "front": "minecraft:block/white_concrete",
-    "back": "minecraft:block/light_gray_concrete",
-    "accent": "minecraft:block/black_concrete",
-    "pole": "minecraft:block/smooth_stone"
+    "front": "jsy:block/station_sign_front",
+    "back": "jsy:block/station_sign_back",
+    "accent": "jsy:block/station_sign_accent",
+    "pole": "jsy:block/station_sign_pole"
   },
   "elements": [
     {

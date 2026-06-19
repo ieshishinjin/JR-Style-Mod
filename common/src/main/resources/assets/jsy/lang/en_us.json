@@ -19,5 +19,14 @@
   "screen.jsy.jr_station_sign.preset.yamanote": "Yamanote Line",
   "screen.jsy.jr_station_sign.preset.chuo": "Chuo Line",
   "screen.jsy.jr_station_sign.preset.keihin_tohoku": "Keihin-Tohoku Line",
-  "screen.jsy.jr_station_sign.preset.saikyo": "Saikyo Line"
+  "screen.jsy.jr_station_sign.preset.saikyo": "Saikyo Line",
+
+  "block.jsy.platform_sign": "Platform Number Sign",
+  "block.jsy.direction_sign": "Direction Sign",
+
+  "screen.jsy.platform_sign.title": "Platform Number",
+  "screen.jsy.platform_sign.number": "Platform Number",
+
+  "screen.jsy.direction_sign.title": "Direction Sign",
+  "screen.jsy.direction_sign.text": "Direction Text"
 }

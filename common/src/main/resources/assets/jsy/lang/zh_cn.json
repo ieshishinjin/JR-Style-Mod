@@ -6,6 +6,8 @@
   "block.jsy.line_color_block": "线路颜色方块",
   "block.jsy.jr_station_sign_hanging": "JR站名牌（悬挂式）",
   "block.jsy.jr_station_sign_pole": "JR站名牌（立柱式）",
+  "block.jsy.platform_sign": "月台编号牌",
+  "block.jsy.direction_sign": "方向指示牌",
 
   "screen.jsy.jr_station_sign.title": "JR 站名牌设置",
   "screen.jsy.jr_station_sign.station_name": "站名",
@@ -19,5 +21,11 @@
   "screen.jsy.jr_station_sign.preset.yamanote": "山手线",
   "screen.jsy.jr_station_sign.preset.chuo": "中央线",
   "screen.jsy.jr_station_sign.preset.keihin_tohoku": "京滨东北线",
-  "screen.jsy.jr_station_sign.preset.saikyo": "埼京线"
+  "screen.jsy.jr_station_sign.preset.saikyo": "埼京线",
+
+  "screen.jsy.platform_sign.title": "月台编号设置",
+  "screen.jsy.platform_sign.number": "月台编号",
+
+  "screen.jsy.direction_sign.title": "方向指示设置",
+  "screen.jsy.direction_sign.text": "方向文字"
 }

@@ -17,16 +17,15 @@ public class ModCreativeModTabFabric {
                     .title(Component.translatable("itemGroup.jsy.main"))
                     .icon(() -> new ItemStack(Items.MINECART))
                     .displayItems((params, output) -> {
-                        // 添加线路颜色方块到创造模式标签页
                         output.accept(FabricModBlocks.LINE_COLOR_BLOCK.asItem());
                         output.accept(FabricModBlocks.JR_STATION_SIGN_HANGING.asItem());
                         output.accept(FabricModBlocks.JR_STATION_SIGN_POLE.asItem());
+                        output.accept(FabricModBlocks.PLATFORM_SIGN.asItem());
+                        output.accept(FabricModBlocks.DIRECTION_SIGN.asItem());
                     })
                     .build();
 
     public static void register() {
-        Constants.LOG.info("Registering creative mode tab for Fabric");
-        // 注册物品栏
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
                 new ResourceLocation(Constants.MOD_ID, "main"),
                 JR_STYLE_TAB

@@ -23,14 +23,19 @@ public class ModBlocks {
     public static final Block JR_STATION_SIGN_HANGING = new BlockJRStationSign(false);
     public static final Block JR_STATION_SIGN_POLE = new BlockJRStationSign(true);
 
+    // 新方块
+    public static final Block PLATFORM_SIGN = new BlockPlatformSign();
+    public static final Block DIRECTION_SIGN = new BlockDirectionSign();
+
     /**
      * 注册所有方块到游戏中
-     * 由 Fabric/Forge 端的初始化代码调用
      */
     public static void registerBlocks(BiConsumer<String, Block> registrar) {
         register("line_color_block", LINE_COLOR_BLOCK, registrar);
         register("jr_station_sign_hanging", JR_STATION_SIGN_HANGING, registrar);
         register("jr_station_sign_pole", JR_STATION_SIGN_POLE, registrar);
+        register("platform_sign", PLATFORM_SIGN, registrar);
+        register("direction_sign", DIRECTION_SIGN, registrar);
     }
 
     private static void register(String name, Block block, BiConsumer<String, Block> registrar) {

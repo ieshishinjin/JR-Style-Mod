@@ -1,0 +1,33 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "blue": "jsy:block/platform_sign_blue",
+    "pole": "jsy:block/station_sign_pole"
+  },
+  "elements": [
+    {
+      "from": [2, 7, 9],
+      "to": [14, 15, 14],
+      "faces": {
+        "north": { "texture": "#blue" },
+        "south": { "texture": "#blue" },
+        "east": { "texture": "#pole" },
+        "west": { "texture": "#pole" },
+        "up": { "texture": "#pole" },
+        "down": { "texture": "#pole" }
+      }
+    },
+    {
+      "from": [7, 0, 11],
+      "to": [9, 7, 13],
+      "faces": {
+        "north": { "texture": "#pole" },
+        "south": { "texture": "#pole" },
+        "east": { "texture": "#pole" },
+        "west": { "texture": "#pole" },
+        "up": { "texture": "#pole" },
+        "down": { "texture": "#pole" }
+      }
+    }
+  ]
+}

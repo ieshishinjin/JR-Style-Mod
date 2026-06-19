@@ -14,9 +14,10 @@ public final class FabricModBlocks {
     public static final Block LINE_COLOR_BLOCK = ModBlocks.LINE_COLOR_BLOCK;
     public static final Block JR_STATION_SIGN_HANGING = ModBlocks.JR_STATION_SIGN_HANGING;
     public static final Block JR_STATION_SIGN_POLE = ModBlocks.JR_STATION_SIGN_POLE;
+    public static final Block PLATFORM_SIGN = ModBlocks.PLATFORM_SIGN;
+    public static final Block DIRECTION_SIGN = ModBlocks.DIRECTION_SIGN;
 
-    private FabricModBlocks() {
-    }
+    private FabricModBlocks() {}
 
     public static void register() {
         ModBlocks.registerBlocks(FabricModBlocks::registerBlock);

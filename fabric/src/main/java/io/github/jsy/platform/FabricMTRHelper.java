@@ -8,35 +8,31 @@ import org.jetbrains.annotations.Nullable;
 
 public class FabricMTRHelper implements IMTRHelper {
 
-    private final boolean mtrAvailable;
-
     public FabricMTRHelper() {
-        boolean available;
-        try {
-            Class.forName("org.mtr.mod.Init");
-            available = true;
-            Constants.LOG.info("MTR mod detected");
-        } catch (ClassNotFoundException e) {
-            available = false;
-            Constants.LOG.warn("MTR mod not available: {}", e.getMessage());
+        if (MTRHelperUtil.isMTRAvailable()) {
+            Constants.LOG.info("MTR mod detected (Fabric)");
+        } else {
+            Constants.LOG.info("MTR mod not available (Fabric)");
         }
-        this.mtrAvailable = available;
     }
 
     @Override
     @Nullable
     public Integer getLineColor(Level level, BlockPos pos) {
-        return null;
+        if (!level.isClientSide) return null; // 只在客户端检测
+        return MTRHelperUtil.getNearbyLineColor(pos);
     }
 
     @Override
     @Nullable
     public String getLineId(Level level, BlockPos pos) {
-        return null;
+        if (!level.isClientSide) return null;
+        return MTRHelperUtil.getNearbyLineId(pos);
     }
 
     @Override
     public boolean isNearMTRFacility(Level level, BlockPos pos, int radius) {
-        return mtrAvailable;
+        if (!level.isClientSide) return false;
+        return MTRHelperUtil.isNearMTRFacility(pos, radius);
     }
 }
